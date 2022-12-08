@@ -1,0 +1,65 @@
+body {
+  background-color: rgb(61, 61, 61);
+}
+
+.Header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 30vh;
+  transition: margin-right 2s ease-in-out;
+}
+
+.ballLeft {
+  width: 4vh;
+  animation: spinning 60s infinite;
+}
+
+.ballRight {
+  width: 4vh;
+  animation: spinning-reverse 60s infinite;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinning-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sprite {
+  width: 30vh;
+}
+
+.info {
+  padding: 5px;
+  color: white;
+  font-size: 30px;
+}
