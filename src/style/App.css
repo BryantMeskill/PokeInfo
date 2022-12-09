@@ -1,3 +1,9 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(61, 61, 61);
 }
@@ -6,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2vh;
 }
 
 .logo {
@@ -15,12 +22,12 @@ body {
 
 .ballLeft {
   width: 4vh;
-  animation: spinning 60s infinite;
+  animation: spinning 30s infinite;
 }
 
 .ballRight {
   width: 4vh;
-  animation: spinning-reverse 60s infinite;
+  animation: spinning-reverse 30s infinite;
 }
 
 @keyframes spinning {
@@ -54,12 +61,59 @@ body {
   align-items: center;
   flex-direction: column;
 }
-.sprite {
-  width: 30vh;
-}
 
 .info {
   padding: 5px;
   color: white;
   font-size: 30px;
+}
+
+.userInput {
+  font-family: "roboto", sans-serif;
+  font-size: 2.5vh;
+  width: 15vw;
+}
+
+.searchBtn {
+  font-family: "roboto", sans-serif;
+  font-size: 2.7vh;
+  background-color: rgb(59, 59, 172);
+  color: white;
+  transition: 0.2s;
+  border: none;
+}
+
+.searchBtn:hover {
+  background-color: white;
+  color: rgb(59, 59, 172);
+  transition: 0.2s;
+}
+
+.searchBtn:active {
+  background-color: rgb(59, 59, 172);
+  color: white;
+}
+
+.Main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dataContainer {
+  font-family: "roboto", sans-serif;
+  border: double 7px white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sprite {
+  border: solid 3px rgb(59, 59, 172);
+  width: 30vh;
+}
+
+.electric {
+  color: yellow;
 }
