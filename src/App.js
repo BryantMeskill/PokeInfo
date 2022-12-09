@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style/App.css";
 import Header from "./components/header";
 import Main from "./components/main";
+
 const Pokedex = require("pokeapi-js-wrapper");
 //API requires caching, so js wrapper is used with custom options
 const customOptions = {
@@ -13,7 +14,8 @@ const P = new Pokedex.Pokedex(customOptions);
 
 function App() {
   const [userInput, setUserInput] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [displayData, setDisplayData] = useState(true);
   const [pokemonData, setPokemonData] = useState({
     name: "",
     types: [],
@@ -44,11 +46,18 @@ function App() {
     //API throws an error if input isn't lowercase
     let inquiry = userInput.toLowerCase();
 
+    if (inquiry === "") {
+      alert("Please enter a Pokemon name or Dex number.");
+      return;
+    }
+
     P.getPokemonByName(`${inquiry}`)
       .then(function (response) {
+        setIsLoading(true);
         return response;
       })
       .then(function (response) {
+        setDisplayData(false);
         setIsLoading(false);
         setPokemonData({
           name: response.name.toUpperCase(),
@@ -60,7 +69,8 @@ function App() {
         });
       })
       .catch(function (err) {
-        alert("Please enter the correct Pokemon name or Dex number");
+        setIsLoading(false);
+        alert("Please enter the correct Pokemon name or Dex number.");
       });
   };
 
@@ -73,17 +83,20 @@ function App() {
             type="text"
             name="userInput"
             className="userInput"
-            placeholder="Please enter a Pokemon's name or dex number"
+            placeholder="Pikachu, Rayquaza, 123..."
             value={userInput}
             onChange={handleInputChange}
             onKeyPress={handleKeyPress}
           />
-          <button className="search" onClick={handleClick}></button>
+          <button className="searchBtn" onClick={handleClick}>
+            Search
+          </button>
         </form>
       </div>
 
       <Main
         isLoading={isLoading}
+        displayData={displayData}
         name={pokemonData.name}
         types={pokemonData.types}
         dexNo={pokemonData.dexNo}
