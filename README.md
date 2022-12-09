@@ -1,1 +1,1 @@
-# PokeInfo
+# PokePal
