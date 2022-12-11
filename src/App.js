@@ -15,7 +15,7 @@ const P = new Pokedex.Pokedex(customOptions);
 function App() {
   const [userInput, setUserInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [displayData, setDisplayData] = useState(true);
+  const [displayData, setDisplayData] = useState(false);
   const [pokemonData, setPokemonData] = useState({
     name: "",
     types: [],
@@ -23,6 +23,7 @@ function App() {
     height: "",
     weight: "",
     sprite: "",
+    stats: [],
   });
 
   //Sets user input to what's entered in textbox
@@ -39,6 +40,8 @@ function App() {
   };
 
   const handleClick = (e) => {
+    setIsLoading(true);
+    setDisplayData(false);
     //prevents input from being put into address bar
     e.preventDefault();
 
@@ -54,11 +57,12 @@ function App() {
     P.getPokemonByName(`${inquiry}`)
       .then(function (response) {
         setIsLoading(true);
+        setDisplayData(false);
+        //SWITCH BACK TO RETURN RESPONSE WHEN DONE
         return response;
       })
       .then(function (response) {
-        setDisplayData(false);
-        setIsLoading(false);
+        setDisplayData(true);
         setPokemonData({
           name: response.name.toUpperCase(),
           types: response.types,
@@ -66,10 +70,13 @@ function App() {
           height: response.height,
           weight: response.weight,
           sprite: response.sprites.front_default,
+          stats: response.stats,
         });
+        setIsLoading(false);
       })
       .catch(function (err) {
         setIsLoading(false);
+        setDisplayData(false);
         alert("Please enter the correct Pokemon name or Dex number.");
       });
   };
@@ -103,6 +110,7 @@ function App() {
         height={pokemonData.height}
         weight={pokemonData.weight}
         sprite={pokemonData.sprite}
+        stats={pokemonData.stats}
       />
     </div>
   );

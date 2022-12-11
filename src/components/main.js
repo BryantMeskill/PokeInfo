@@ -1,5 +1,4 @@
 import React from "react";
-import ball from "../img/ball.svg";
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 const renderType = (types) => {
