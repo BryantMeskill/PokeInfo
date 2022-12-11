@@ -12,22 +12,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vh;
+  padding-top: 2vh;
 }
 
 .logo {
-  width: 30vh;
-  transition: margin-right 2s ease-in-out;
+  min-width: 20vh;
 }
 
 .ballLeft {
+  min-width: 2vh;
   width: 4vh;
-  animation: spinning 30s infinite;
+  animation: spinning 20s infinite linear;
 }
 
 .ballRight {
+  min-width: 2vh;
   width: 4vh;
-  animation: spinning-reverse 30s infinite;
+  animation: spinning-reverse 20s infinite linear;
 }
 
 @keyframes spinning {
@@ -36,7 +37,7 @@ body {
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(359deg);
   }
 }
 
@@ -51,32 +52,37 @@ body {
 }
 
 .hidden {
-  visibility: hidden;
+  display: none;
   opacity: 0;
 }
 
+.loaded {
+  opacity: 1;
+  transition: 0.5s;
+}
 .inputContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 2vh;
 }
 
 .info {
   padding: 5px;
   color: white;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .userInput {
   font-family: "roboto", sans-serif;
-  font-size: 2.5vh;
-  width: 15vw;
+  font-size: 35px;
+  min-width: 15vw;
 }
 
 .searchBtn {
   font-family: "roboto", sans-serif;
-  font-size: 2.7vh;
+  font-size: 38px;
   background-color: rgb(59, 59, 172);
   color: white;
   transition: 0.2s;
@@ -94,26 +100,118 @@ body {
   color: white;
 }
 
-.Main {
+.dataContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leftContainer {
+  padding: 7.5px;
+  border: solid 3px white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.dataContainer {
-  font-family: "roboto", sans-serif;
-  border: double 7px white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.rightContainer {
+  padding: 20px;
+  border: solid 2px white;
+  color: white;
+  text-align: center;
 }
 
 .sprite {
-  border: solid 3px rgb(59, 59, 172);
-  width: 30vh;
+  background-image: url("../img/grass.png");
+  min-width: 250px;
+  width: 275px;
+}
+
+.type {
+  margin: 5px;
+  padding: 5px;
+  display: inline;
+  border-radius: 10vh;
+  color: rgb(255, 255, 255);
+  padding: 1.2vh;
+  text-shadow: 1px 1px 3px black;
+  list-style-type: none;
+}
+
+.bug {
+  background-color: rgb(114, 159, 63);
+}
+
+.dark {
+  background-color: rgb(112, 112, 112);
+}
+
+.dragon {
+  background-color: rgb(119, 102, 238);
 }
 
 .electric {
-  color: yellow;
+  background-color: rgb(255, 254, 51);
+}
+
+.fairy {
+  background-color: rgb(238, 153, 238);
+}
+
+.fire {
+  background-color: rgb(255, 68, 34);
+}
+
+.fighting {
+  background-color: rgb(187, 85, 68);
+}
+
+.flying {
+  background-color: rgb(136, 153, 255);
+}
+
+.ghost {
+  background-color: rgb(102, 102, 187);
+}
+
+.grass {
+  background-color: rgb(119, 204, 85);
+}
+
+.ground {
+  background-color: rgb(221, 187, 85);
+}
+
+.ice {
+  background-color: rgb(102, 204, 255);
+}
+
+.normal {
+  background-color: rgb(170, 170, 153);
+}
+
+.poison {
+  background-color: rgb(170, 85, 153);
+}
+
+.psychic {
+  background-color: rgb(255, 85, 153);
+}
+
+.rock {
+  background-color: rgb(187, 170, 102);
+}
+
+.steel {
+  background-color: rgb(170, 170, 187);
+}
+
+.water {
+  background-color: rgb(51, 153, 255);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
 }
