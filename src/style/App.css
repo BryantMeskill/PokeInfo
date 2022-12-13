@@ -76,13 +76,12 @@ body {
 
 .userInput {
   font-family: "roboto", sans-serif;
-  font-size: 35px;
-  min-width: 15vw;
+  font-size: 22px;
 }
 
 .searchBtn {
   font-family: "roboto", sans-serif;
-  font-size: 38px;
+  font-size: 25px;
   background-color: rgb(59, 59, 172);
   color: white;
   transition: 0.2s;
@@ -110,7 +109,8 @@ body {
 }
 
 .leftContainer {
-  padding: 7.5px;
+  width: 365px;
+  padding-top: 5px;
   border: solid 3px white;
   display: flex;
   justify-content: center;
@@ -119,7 +119,8 @@ body {
 }
 
 .rightContainer {
-  padding: 20px;
+  width: 365px;
+  padding: 10px;
   border: solid 2px white;
   color: white;
   text-align: center;
@@ -128,7 +129,7 @@ body {
 .sprite {
   background-image: url("../img/grass.png");
   min-width: 250px;
-  width: 275px;
+  width: 265px;
 }
 
 .type {
