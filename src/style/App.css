@@ -15,6 +15,15 @@ body {
   padding-top: 2vh;
 }
 
+.Subheader {
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  padding-top: 2px;
+  font-family: "roboto", "sans-serif";
+  text-shadow: 1px 2px 3px black;
+}
+
 .logo {
   min-width: 20vh;
 }
@@ -60,18 +69,26 @@ body {
   opacity: 1;
   transition: 0.5s;
 }
+
 .inputContainer {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   padding: 2vh;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .info {
   padding: 5px;
   color: white;
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .userInput {
@@ -104,14 +121,17 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  text-shadow: 1px 2px 3px black;
+  text-shadow: 1px 2px 3px rgb(22, 21, 21);
   color: aquamarine;
 }
 
 .leftContainer {
-  width: 365px;
+  background-color: rgb(45, 45, 45);
+  width: 375px;
   padding-top: 5px;
+  margin: 0.25%;
   border: solid 3px white;
+  border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,17 +139,23 @@ body {
 }
 
 .rightContainer {
-  width: 365px;
-  padding: 10px;
-  border: solid 2px white;
+  background-color: rgb(45, 45, 45);
+  width: 375px;
+  padding: 9px;
+  margin: 0.25%;
+  border: solid 3px white;
+  border-radius: 15px;
   color: white;
   text-align: center;
+  min-width: 270px;
 }
 
 .sprite {
   background-image: url("../img/grass.png");
   min-width: 250px;
   width: 265px;
+  border-radius: 10px;
+  border: solid 2px rgb(255, 255, 255);
 }
 
 .type {
@@ -138,7 +164,7 @@ body {
   display: inline;
   border-radius: 10vh;
   color: rgb(255, 255, 255);
-  padding: 1.2vh;
+  padding: 0.8vh;
   text-shadow: 1px 1px 3px black;
   list-style-type: none;
 }
