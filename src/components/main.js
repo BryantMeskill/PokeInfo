@@ -52,7 +52,7 @@ function Main({
           <h2 className="statsTitle">Base Stats</h2>
           <span className="stats">{renderStats(stats)}</span>
           <span className="height info">Height: {height}m</span>
-          <span className="weight info">Weight {weight}kg</span>
+          <span className="weight info">Weight: {weight}kg</span>
         </div>
       </div>
     </div>
